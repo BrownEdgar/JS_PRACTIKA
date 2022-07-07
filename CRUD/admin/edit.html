@@ -8,6 +8,22 @@
     <title>Login page</title>
   </head>
   <body>
-    <script src="./js/edit.js"></script>
+			  <form autocomplete="off" id="editHeroForm">
+			  	<input type="text" placeholder="" id="heroname" />
+			  	<select name="type" id="herotype">
+			  		<option value=""></option>
+			  		<option value="strength ">Strength</option>
+			  		<option value="agility">Agility</option>
+			  		<option value="intelligence ">Intelligence</option>
+			  	</select>
+					<div class="flex">
+						<img src="" alt="" id="imageBox">
+						<input type="file" id="heroImage" />
+					</div>
+			  	<input type="submit" value="save" />
+			  </form>
+			  <script type="module" src="./js/storages.js"></script>
+			  <script type="module" src="./js/edit.js"></script>
+
   </body>
 </html>

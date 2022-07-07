@@ -1,23 +1,19 @@
-import Storages from "./storage.js";
+import Storages from "./storages.js"
+const form = document.querySelector('#addHeroForm')
 
-let addHeroForm = document.querySelector('#addHeroForm')
 
-let id = 1
-function addHero(e) {
-  e.preventDefault()
+form.addEventListener('submit', (e) => {
+	e.preventDefault()
+	const { heroname, herotype, heroImage } = e.target
+	const id = Storages.getAllHeroes().length + 1
 
-  const { herotype, heroname, heroImage } = e.target;
+	const newHero = {
+		id,
+		name: heroname.value,
+		type: herotype.value,
+		image: heroImage.files[0].name
+	}
+	Storages.saveHero(newHero)
+	location.href = "admin.html"
 
-  const newHero = {
-    id,
-    type: herotype.value,
-    name: heroname.value,
-    image: heroImage.files[0].name || "unknown"
-  }
-
-  Storages.saveHero(newHero)
-  id += 1;
-  location.href = "admin.html"
-}
-
-addHeroForm.addEventListener('submit', addHero)
+})

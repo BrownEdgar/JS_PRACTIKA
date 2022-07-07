@@ -1,30 +1,23 @@
-import Storages from "./storage.js";
+import Storages from "./storages.js"
 
-let myForm = document.querySelector('#myForm')
+const admin = {
+	LOGIN: "admin",
+	PASSWORD: "admin"
+}
 
-const user = {
-  LOGIN: "admin",
-  PASSWORD: "admin"
+const form = document.querySelector('#myForm')
+
+function login(e) {
+	e.preventDefault()
+	const login = document.querySelector('#login').value
+	const password = document.querySelector('#password').value
+	if (login === admin.LOGIN && password === admin.PASSWORD){
+		Storages.saveToStorage("login", true)
+		location.href = "admin.html"
+	}else{
+		alert("invalid data try again")
+	}
 }
 
 
-
-function sighIn(e) {
-  e.preventDefault()
-
-  console.log("login")
-  let login = document.querySelector('#login').value
-  let password = document.querySelector('#password').value
-  console.log('login', { login, password })
-  if (login === user.LOGIN && password === user.PASSWORD) {
-    Storages.saveItemToStorage("token", true)
-    location.href = 'admin.html'
-  } else {
-    alert("invalid password")
-  }
-}
-
-myForm.addEventListener('submit', sighIn)
-
-
-
+form.addEventListener("submit", login)
