@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/script.css">
+  <title>Random user</title>
+</head>
+
+<body>
+  <div class="main">
+
+    <div class="container">
+      <kbd id="getJson">
+        get json
+      </kbd>
+
+      <div class="image__wrapper">
+        <div class="container__image">
+          <img src='' alt=''>
+          <span id="age" title="age"></span>
+        </div>
+      </div>
+      <div class="info">
+        <h2><span id="title"></span>...</h2>
+        <ul id="userList">
+          <li>
+            <span><i class="fa-solid fa-venus-mars"></i></span>
+            <span id="gender">...</span>
+          </li>
+          <li>
+            <span><i class="fa-solid fa-earth-americas"></i></span>
+            <span id="country">...</span>
+          </li>
+          <li>
+            <span><i class="fa-solid fa-tree-city"></i></span>
+            <span id="city">...</span>
+          </li>
+          <li>
+            <span><i class="fa-solid fa-signs-post"></i></span>
+            <span id="postcode">...</span>
+          </li>
+        </ul>
+      </div>
+      <div class="email">
+        <p><span>email:</span>....</p>
+        <p><span>username:</span>....</p>
+        <p><span>registered:</span>....</p>
+      </div>
+      <div class="fetch">
+        <button></button>
+      </div>
+    </div>
+    <div id="json">
+
+      <pre>
+      </pre>
+    </div>
+  </div>
+
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

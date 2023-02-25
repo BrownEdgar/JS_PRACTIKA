@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #ccdcef;
+}
+
+h2,
+p {
+	margin-bottom: 10px;
+}
+
+.tabs {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 660px;
+	height: 350px;
+	background: #eee;
+	overflow: hidden;
+	box-shadow: 2px 2px 5px #ccc;
+	display: flex;
+	padding-right: 20px;
+}
+
+.tabs .tab-header {
+	width: 150px;
+}
+
+.tabs .tab-header>div {
+	width: 100%;
+	height: calc(100% / 4);
+	background: #ddd;
+	text-indent: 20px;
+	color: #888;
+	font-weight: 800;
+	font-size: 14px;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	border-left: 5px solid #ddd;
+	cursor: pointer;
+	transition: all 20ms ease-in-out;
+}
+
+.tabs .tab-header>div.active {
+	border-left: 5px solid #00acee;
+	color: #00acee;
+	background: #eee;
+}
+
+.tabs .tab-content {
+	padding: 20px 30px;
+	position: relative;
+	flex: 1;
+}
+
+.tabs .tab-content>div {
+	position: absolute;
+	top: -50vh;
+	left: 100px;
+	opacity: 0;
+	transition: 
+	opacity 200ms ease-in-out 0ms, 
+	left 300ms ease-in-out 0ms,
+	top 0ms ease-in-out 3000ms
+}
+
+.tabs .tab-content>div.active {
+	top: 20px;
+	left: 20px;
+	opacity: 1;
+	transition: 
+	opacity 200ms ease-in-out 0ms, 
+	left 300ms ease-in-out 0ms,
+	top 0ms ease-in-out 0ms
+}
+
+.btn {
+	padding: 1rem 1.5rem;
+	background-color: rgb(228, 224, 224);
+	border:0;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.btn.active {
+	border-left: 3px solid #00acee;
+	background-color: violet;
+}
