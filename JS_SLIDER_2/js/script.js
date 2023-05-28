@@ -1,12 +1,10 @@
 const prev 		= document.getElementById("btn-prev"),
 			next 		= document.getElementById("btn-next"),
-			slides 	= document.querySelectorAll(".slide"),
+			slides	= document.querySelectorAll(".slide"),
 			dots 		= document.querySelectorAll(".dot");
 
 
 let index = 0; // նախնական / current սլայդի համարը
-
-
 
 const activeSlide = (n) => {
 	for (const slide of slides) {
@@ -23,13 +21,12 @@ const activeDots = (n) => {
 }
 
 
-
 const uppdateSliderAndDots = (index) => {
 	activeSlide(index)
 	activeDots(index)
 }
 
-// եթե հասնենք վերջին/առաջին սսայդին տեղափոխվենք վերջից => սկիզբ և հակառակը  
+// եթե հասնենք վերջին/առաջին սլայդին տեղափոխվենք վերջից => սկիզբ և հակառակը  
 const nextSlide = () => {
 	if (index === slides.length - 1) {
 		index = 0;
@@ -39,7 +36,6 @@ const nextSlide = () => {
 		index++;
 		uppdateSliderAndDots(index)
 	}
-	console.log(index)
 }
 
 const prevSlide = () => {

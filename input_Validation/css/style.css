@@ -1,53 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap');
 
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
-	
+
 }
+
 .main {
 	width: 100%;
 	height: 100vh;
 	background-color: #333333;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	
-}
-#myForm{
-	border:1px solid orangered;
-	padding: 20px;
-	width: 500px;
-	min-height: 200px	;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 }
+
+#myForm {
+	border: 1px solid orangered;
+	padding: 20px;
+	width: 500px;
+	min-height: 200px;
+
+}
+
 #myForm label {
 	font-size: 30px;
 	text-align: center;
 	margin-bottom: 20px;
 	display: block;
-	 color: #e0dfdc;
-    background-color: #333;
+	color: #e0dfdc;
+	background-color: #333;
 	font-weight: 300;
 	letter-spacing: 5px;
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	    text-shadow: 
-      0 -1px 0 #fff, 
-      0 1px 0 #2e2e2e, 
-      0 2px 0 #2c2c2c, 
-      0 3px 0 #2a2a2a, 
-      0 4px 0 #282828, 
-      0 5px 0 #262626, 
-      0 6px 0 #242424, 
-      0 7px 0 #222, 
-      0 8px 0 #202020, 
- 
-      0 9px 0 #d6d4d4, 
-      0 11px 30px rgba(0, 0, 0, 0.9);
+	text-shadow:
+		0 -1px 0 #fff,
+		0 1px 0 #2e2e2e,
+		0 2px 0 #2c2c2c,
+		0 3px 0 #2a2a2a,
+		0 4px 0 #282828,
+		0 5px 0 #262626,
+		0 6px 0 #242424,
+		0 7px 0 #222,
+		0 8px 0 #202020,
+
+		0 9px 0 #d6d4d4,
+		0 11px 30px rgba(237, 10, 10, 0.9);
 }
+
 input {
 	width: 95%;
 	border: none;
@@ -55,21 +59,25 @@ input {
 	padding: 15px 20px;
 	color: orangered;
 }
-input:focus{
+
+input:focus {
 	outline: none;
 }
-.options{
+
+.options {
 	margin-top: 20px;
 	text-align: left;
 	font-size: 40px;
 }
-span{
-	position: relative;	
+
+span {
+	position: relative;
 }
+
 span i {
 	font-size: 50px;
 	margin-left: 20px;
-	text-shadow: 1px 1px 3px  #ff0915;
+	text-shadow: 1px 1px 3px #ff0915;
 	-webkit-text-fill-color: #2c2c2c;
 	top: 0;
 	transition: top 1s;
@@ -79,26 +87,29 @@ i {
 	position: relative;
 
 }
+
 span.uppercase.done i,
 span.number.done i,
 span.length.done i,
-span.length.done::before{
-	text-shadow: 1px -1px 3px  #26ff09;
+span.length.done::before {
+	text-shadow: 1px -1px 3px #26ff09;
 	-webkit-text-fill-color: #010702;
 	top: -6px !important;
 	transition: top 1s;
-	
+
 }
+
 span.length.done::before {
 	content: '';
 }
-span.length::before{
+
+span.length::before {
 	content: "10";
 	position: absolute;
 	top: -12px;
 	left: 45%;
 	font-size: 18px;
 	font-weight: 800;
-		text-shadow: 1px 1px 3px  #ff0915;
+	text-shadow: 1px 1px 3px #ff0915;
 	-webkit-text-fill-color: #2c2c2c;
 }

@@ -25,6 +25,7 @@ editHeroForm.addEventListener('submit', (e) => {
 		type: herotype.value || hero.type,
 		image: heroImage?.files[0]?.name || hero.image
 	}
+
 	const arr = heroes.map(elem => {
 		if(elem.id == id){
 			return  newHero;

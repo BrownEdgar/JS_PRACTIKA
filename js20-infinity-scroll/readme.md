@@ -11,11 +11,5 @@ course-reference
 https://academy.zerotomastery.io/p/javascript-projects
 
 ---
-## feature
-- custom style ( try to clone style of unsplash or pinterest)
-  - function : add image to shortest column
-- fetch photos using unsplash api;
-- loading
-- responsive screen
----
+
 [-> go to live server](https://ehdgodgka.github.io/js20-infinity-scroll/)
