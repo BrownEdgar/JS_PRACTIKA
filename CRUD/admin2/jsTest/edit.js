@@ -1,51 +1,39 @@
-import { MAIN_ARRAY_NAME } from './constants.js';
-import Storage from './storages.js';
+import Storage from './storages.js'
+import { MAIN_ARRAY_NAME } from "./constants.js";
 
-const id = +location.hash.slice(1);//6532
-
-
-const editHeroForm = document.querySelector("#editHeroForm")
-const heroname = document.querySelector("#heroname")
+const editHeroForm = document.querySelector('#editHeroForm');
+const inp = document.querySelector("#heroname")
 const herotype = document.querySelector("#herotype")
-const imageBox = document.querySelector("#imageBox")
-const heroImage = document.querySelector("#heroImage")
-const backButton = document.querySelector("#back")
+const heroImage = document.querySelector("#imageBox");
+const heroImageInput = document.querySelector("#heroImage");
+
+const id = location.hash.slice(1);
 
 const heroes = Storage.getAllHeroes();
+const hero = heroes.find(elem => elem.id == id);
 
-
-const hero = heroes.find(hero => hero.id === id);
-heroname.value = hero.name;
+inp.value = hero.name;
 herotype.value = hero.type;
-imageBox.src = `./images/${hero.image}`;
-
+heroImage.src = `./images/${hero.image}`;
 
 editHeroForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const { heroname, herotype, heroImage } = e.target;
-	const newHero = {
+	const newhero = {
 		id,
-		name: heroname.value,
-		type: herotype.value,
+		name: heroname.value || hero.name,
+		type: herotype.value || hero.type,
 		image: heroImage?.files[0]?.name || hero.image
 	}
 
 	const arr = heroes.map(elem => {
-		return (elem.id === id) ? newHero : elem;
+		return elem.id == id ? newhero : elem;
 	})
 
-	Storage.saveToStorage(MAIN_ARRAY_NAME, arr);
-	location.assign('admin.html')
-
+	Storage.saveToStorage(MAIN_ARRAY_NAME,arr);
+	location.href = 'admin.html'
 })
 
-heroImage.addEventListener('change', (e) => {
-	if (heroImage?.files.length > 0) {
-		imageBox.src = `./images/${heroImage.files[0].name}`;
-	}
-})
-
-backButton.addEventListener('click', (e) => {
-	console.log(history)
-	// history.back();
+heroImageInput.addEventListener('change', (e) => {
+	heroImage.src = `./images/${e.target.files[0]?.name}`;
 })

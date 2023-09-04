@@ -1,1 +1,0 @@
-export const MAIN_ARRAY_NAME = "heroes"

@@ -26,6 +26,7 @@ class Storage {
 	static deleteById(id) {
 		const heroes = Storage.getAllHeroes()
 		const heroesDelete = heroes.filter((elem) => elem.id !== id)
+
 		Storage.saveToStorage(MAIN_ARRAY_NAME, heroesDelete)
 	}
 }

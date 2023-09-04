@@ -39,3 +39,6 @@ editHeroForm.addEventListener('submit', (e) => {
 
 })
 
+heroImageInput.addEventListener('change', (e) => {
+	heroImage.src = `./images/${e.target.files[0]?.name}`;
+})

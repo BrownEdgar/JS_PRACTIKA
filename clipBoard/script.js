@@ -23,3 +23,5 @@ containerItem.forEach(elem => {
 			},1000)
 		})
 })
+
+

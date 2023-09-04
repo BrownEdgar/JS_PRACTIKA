@@ -1,23 +1,24 @@
 import Storage from './storages.js';
 
-if (!Storage.getFromStorages("isAdmin")) {
+
+if (Storage.getFromStorage('isLogin') === null) {
 	location.href = 'login.html'
 }
+const table = document.getElementsByTagName('table')[0];
 
-const table = document.getElementsByTagName("table")[0]
 
 function displayHeroes() {
 	const heroes = Storage.getAllHeroes();
-	const tbody = document.getElementsByTagName("tbody")[0];
+	const tbody = document.getElementsByTagName('tbody')[0];
 	tbody.innerHTML = '';
 	heroes.forEach(hero => {
 		tbody.innerHTML += `
-				<tr>
+			<tr>
 				<td>${hero.id}</td>
 				<td>${hero.name}</td>
 				<td>${hero.type}</td>
-				<td>
-					<img src='./images/${hero.image}' alt="" />
+				<td>	
+					<img src="./images/${hero.image}" />
 				</td>
 				<td>
 					<a href="edit.html#${hero.id}">
@@ -25,24 +26,24 @@ function displayHeroes() {
 					</a>
 				</td>
 				<td>
-				<button class="delete" data-heroid='${hero.id}'>
+				<button class="delete" data-id="${hero.id}">
 					<i class="fa-solid fa-trash-can"></i>
 				</button>
 				</td>
-				</tr>
-		`;
-	});
-
+			</tr>
+		`
+	})
 }
+
 displayHeroes()
 
 table.addEventListener('click', (e) => {
-
+	 console.log('ok')
 	const { tagName } = e.target.parentElement;
+
 	if (tagName === "BUTTON") {
-		const id = e.target.parentElement.dataset.heroid;
-		Storage.deleteHeroById(id);
+		const id = e.target.parentElement.dataset.id;
+		Storage.deleteById(id);
 		displayHeroes()
 	}
-
 })

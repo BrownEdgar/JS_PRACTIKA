@@ -1,33 +1,32 @@
 import { MAIN_ARRAY_NAME } from "./constants.js";
 
 class Storage {
-
 	static saveToStorage(key, value) {
-		if (typeof value === "object") {
-			localStorage.setItem(key, JSON.stringify(value));
+		if (typeof value === "string" || typeof value === "number") {
+			localStorage.setItem(key, value)
 		} else {
-			localStorage.setItem(key, value);
+			localStorage.setItem(key, JSON.stringify(value))
 		}
 	}
 
-	static getFromStorages(key) {
-		return localStorage.getItem(key);
+	static getFromStorage(key) {
+		return localStorage.getItem(key)
+	}
+
+	static saveHero(newHero) {
+		const heroes = Storage.getAllHeroes(); // []
+		heroes.push(newHero);
+		Storage.saveToStorage(MAIN_ARRAY_NAME, heroes)
 	}
 
 	static getAllHeroes() {
-		const heroes = localStorage.getItem(MAIN_ARRAY_NAME)
-		return (heroes && JSON.parse(heroes)) || [];
+		return Storage.getFromStorage(MAIN_ARRAY_NAME) && JSON.parse(Storage.getFromStorage(MAIN_ARRAY_NAME)) || []
 	}
 
-	static saveHero(hero) {
+	static deleteById(id) {
 		const heroes = Storage.getAllHeroes();
-		heroes.push(hero);
-		Storage.saveToStorage(MAIN_ARRAY_NAME, heroes)
-	}
-	static deleteHeroById(id) {
-		const heroes = Storage.getAllHeroes();
-		const filtededArr = heroes.filter(hero => hero.id != id);
-		Storage.saveToStorage(MAIN_ARRAY_NAME, filtededArr)
+		const result = heroes.filter(hero => hero.id != id);
+		Storage.saveToStorage(MAIN_ARRAY_NAME, result)
 	}
 }
 
